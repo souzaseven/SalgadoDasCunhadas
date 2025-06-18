@@ -550,3 +550,26 @@ body.light-mode footer p {
 body.light-mode .qty-badge {
   background: var(--primary-dark);
 }
+
+/* Destaque congelado */
+.frosted {
+  background: linear-gradient(135deg, #c9f3ff, #e0f7fa);
+  color: #003344;
+  border: 2px solid #00bcd4;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+  animation: frostPulse 3s infinite;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+/* Animação de "congelamento" */
+@keyframes frostPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.4);
+    background-color: #e0f7fa;
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.8);
+    background-color: #b2ebf2;
+  }
+}
