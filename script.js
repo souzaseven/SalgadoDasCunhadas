@@ -108,7 +108,7 @@ localStorage.setItem("orderNumber", orderNumber);
       const date = now.toLocaleDateString('pt-BR');
       const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
-      let message = `*🍴 PEDIDO SALGADOS DA ANA* 🍴\n\n`;
+      let message = `*🍴 PEDIDO SALGADO DAS CUNHADAS* 🍴\n\n`;
       message += `*Cliente:* ${name}\n`;
       message += `*Nº do pedido:* ${orderNumber}\n`;
       message += `*Data:* ${date} às ${time}\n`;
@@ -133,7 +133,7 @@ localStorage.setItem("orderNumber", orderNumber);
     }
 
     function contactPerson(name, number) {
-      const message = encodeURIComponent(`Olá ${name}, gostaria de saber mais sobre os salgados da ANA!`);
+      const message = encodeURIComponent(`Olá ${name}, gostaria de saber mais sobre o salgado das cunhadas!`);
       window.open(`https://wa.me/${number}?text=${message}`, '_blank');
     }
 
