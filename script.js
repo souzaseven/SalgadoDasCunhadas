@@ -79,6 +79,7 @@
     }
 
     function sendWhatsAppOrder() {
+const now = new Date();
       const name = document.getElementById('client-name').value.trim();
       const payment = document.getElementById('payment-method').value;
       const delivery = document.getElementById('delivery-method').value;
