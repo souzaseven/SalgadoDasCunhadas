@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salgado das Cunhadas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="./style.css">
+    <!--souza system-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8542251167876044"
+        crossorigin="anonymous"></script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥟</text></svg>">
+
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-utensils"></i> Salgado das Cunhadas 🥟</h1>
+    <p>Delícias artesanais feitas com ingredientes selecionados para alegrar seu dia!</p>
+  </header>
+<button id="theme-toggle" class="btn-primary" style="position: absolute; top: 1rem; right: 1rem;">
+  <i class="fas fa-moon"></i>
+</button>
+
+
+  <div class="container">
+    <div class="flex-box">
+      <div class="section half">
+<div class="form-group">
+  <input type="text" id="extra-notes" placeholder="Observações: Salgados Congelados" />
+</div>
+
+        <h2>Informações do Pedido</h2>
+        <div class="form-group">
+          <input type="text" id="client-name" placeholder="Seu nome completo" required />
+        </div>
+        <div class="form-group">
+          <select id="payment-method">
+            <option value="" disabled selected>Selecione a forma de pagamento</option>
+            <option value="PIX">PIX</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Cartão de Débito">Cartão de Débito</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select id="delivery-method">
+            <option value="" disabled selected>Selecione o tipo de entrega</option>
+            <option value="Entregar">Entregar</option>
+            <option value="Retirar no local">Retirar no local</option>
+          </select>
+        </div>
+      </div>
+      <div class="section half">
+        <h2>Seu Carrinho</h2>
+        <ul id="cart-list" class="cart-list"></ul>
+        <div class="total-container">
+          <p>Total: R$ <span id="total">0.00</span></p>
+        </div>
+        <button class="btn-primary pulse" onclick="sendWhatsAppOrder()">
+          <i class="fab fa-whatsapp"></i> Finalizar Pedido
+        </button>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Bandejas - UN</h2>
+      <div class="product-grid">
+        <div class="product" data-name="12 pequenos de carne">
+          <span class="qty-badge">0</span>
+          <img src="./risoles12.png" alt="12 salgados pequenos de carne">
+          <h3>12 pequenos de carne</h3>
+          <p>R$ 23,00</p>
+          <div class="btns">
+            <button onclick="addToCart('12 pequenos de carne', 23)">+ Adicionar</button>
+            <button onclick="removeFromCart('12 pequenos de carne')">− Remover</button>
+          </div>
+        </div>
+
+        <div class="product" data-name="5 grandes de carne e 2 pequenos">
+          <span class="qty-badge">0</span>
+          <img src="./salgado.png" alt="5 grandes e 2 pequenos de carne">
+          <h3>5 grandes + 2 pequenos</h3>
+          <p>R$ 28,00</p>
+          <div class="btns">
+            <button onclick="addToCart('5 grandes de carne e 2 pequenos', 28)">+ Adicionar</button>
+            <button onclick="removeFromCart('5 grandes de carne e 2 pequenos')">− Remover</button>
+          </div>
+        </div>
+
+        <div class="product" data-name="7 salgados pequenos de carne">
+          <span class="qty-badge">0</span>
+          <img src="./salgado.png" alt="7 salgados pequenos de carne">
+          <h3>7 salgados pequenos de carne</h3>
+          <p>R$ 12,00</p>
+          <div class="btns">
+            <button onclick="addToCart('7 salgados pequenos de carne', 12)">+ Adicionar</button>
+            <button onclick="removeFromCart('7 salgados pequenos de carne')">− Remover</button>
+          </div>
+        </div>
+
+        <div class="product" data-name="7 salgados grandes">
+          <span class="qty-badge">0</span>
+          <img src="./7salgado.jpeg" alt="7 salgados grandes">
+          <h3>7 salgados grandes</h3>
+          <p>R$ 30,00</p>
+          <div class="btns">
+            <button onclick="addToCart('7 salgados grandes', 30)">+ Adicionar</button>
+            <button onclick="removeFromCart('7 salgados grandes')">− Remover</button>
+          </div>
+        </div>
+
+        <div class="product" data-name="8 salgados pequenos de carne e queijo">
+          <span class="qty-badge">0</span>
+          <img src="./8salgado.jpeg" alt="8 salgados pequenos de carne e queijo">
+          <h3>8 salgados pequenos de carne e queijo</h3>
+          <p>R$ 13,00</p>
+          <div class="btns">
+            <button onclick="addToCart('8 salgados pequenos de carne e queijo', 13)">+ Adicionar</button>
+            <button onclick="removeFromCart('8 salgados pequenos de carne e queijo')">− Remover</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Fale com a gente</h2>
+      <p>Tire suas dúvidas ou faça seu pedido diretamente pelo WhatsApp</p>
+      <div class="contact-buttons">
+        <button class="btn-primary" onclick="contactPerson('Ismayara', '556599016684')">
+          <i class="fab fa-whatsapp"></i> Falar com Ismayara
+        </button>
+        <button class="btn-primary" onclick="contactPerson('Ana Paula', '556599106408')">
+          <i class="fab fa-whatsapp"></i> Falar com Ana Paula
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="image-modal">
+    <img id="modal-image" src="" alt="Ampliada">
+    <button onclick="closeImageModal()">Fechar</button>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p><i class="fas fa-utensils"></i> Salgados da ANA 🥟</p>
+    <p>Delícias feitas com amor para todas as ocasiões!</p>
+    <p>&copy; 2025 Salgados ANA. Todos os direitos reservados.</p>
+  </footer>
+
+<script src="./script.js"></script>
+ <img src="https://profile-counter.glitch.me/salgadaana/count.svg" alt="Contador de Visitantes"
+                style="border: 2px solid; border-radius: 8px; background: transparent; padding: 5px; margin-left: 40%;">
+</body>
+</html>
