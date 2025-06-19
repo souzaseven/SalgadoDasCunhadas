@@ -130,7 +130,7 @@ localStorage.setItem("orderNumber", orderNumber);
       message += `Obrigado pelo seu pedido! 🎉`;
 
       const encoded = encodeURIComponent(message);
-      window.open(`https://wa.me/556592018611?text=${encoded}`, '_blank');
+      window.open(`https://wa.me/5565999106408?text=${encoded}`, '_blank');
     }
 
     function contactPerson(name, number) {
